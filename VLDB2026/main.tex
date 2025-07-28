@@ -1207,7 +1207,7 @@ In contrast, the construction time of IVF-based algorithms grows much more slowl
 	%Due to space constraints, Figure~\ref{fig:exp_8_2} reports results for only the largest ($2^{-2}$) and smallest ($2^{-8}$) range ratios. The experimental results show that across all datasets (YT-Audio-Real, WIT-Real, and Deep1M) and query ranges.
 	
 	\textcolor{blue}{
-	WinFilter maintains optimal performance by building an index for each tree node. It then performs an Approximate Nearest Neighbor (ANN) search on the relevant nodes and post-filters the results, ensuring high recall and queries per second (QPS).
+	WinFilter maintains optimal performance by building an index for each tree node. It then performs an ANN search on the relevant nodes and post-filters the results, ensuring high recall and QPS.
 	In contrast, iRange dynamically constructs a search graph during query time. This method has low overhead and performs well in small-range queries, but its performance degrades as the query range increases.
 	UNIFY utilizes a skip list for localization followed by a linear scan for searching in small-range query scenarios. Its performance is generally lower than graph-based structures like iRange in these cases.
 	Interestingly, Faiss, aided by its efficient ID selector for filtering, calculates distances for only a small subset of points in small-range scenarios. Consequently, it can outperform algorithms specifically designed for range searches.
